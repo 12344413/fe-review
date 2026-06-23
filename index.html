@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>金融工程 · 期末复习</title><style>
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#f8fafc;color:#1e293b;line-height:1.7}
+nav.sidebar{position:fixed;top:0;left:0;width:280px;height:100vh;background:#fff;border-right:1px solid #e2e8f0;overflow-y:auto;z-index:100;padding:1.5rem 0}
+nav.sidebar .logo{padding:0 1.2rem 1rem;border-bottom:1px solid #e2e8f0;margin-bottom:.75rem}
+nav.sidebar .logo h1{font-size:1.15rem;color:#2563eb}
+nav.sidebar .logo p{font-size:.8rem;color:#64748b;margin-top:.2rem}
+nav.sidebar a{display:block;padding:.5rem 1.2rem;text-decoration:none;color:#1e293b;font-size:.875rem;border-left:3px solid transparent;transition:.15s}
+nav.sidebar a:hover,nav.sidebar a.active{background:#dbeafe;color:#2563eb;border-left-color:#2563eb}
+nav.sidebar a.sub{padding-left:2rem;font-size:.8rem;color:#64748b}
+main{margin-left:280px;max-width:960px;padding:2.5rem 2.5rem 5rem}
+section{margin-bottom:3rem}
+section h2{font-size:1.5rem;padding-bottom:.5rem;border-bottom:2px solid #2563eb;margin-bottom:1.25rem;color:#2563eb}
+section h3{font-size:1.1rem;margin:1.25rem 0 .5rem;color:#1e293b;padding-left:.5rem;border-left:3px solid #2563eb}
+section h4{font-size:1rem;margin:1rem 0 .4rem;color:#334155}
+section ul,section ol{padding-left:1.5rem;margin:.5rem 0}
+section li{margin-bottom:.3rem}
+.formula{background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:.75rem 1rem;margin:.75rem 0;font-family:"Times New Roman","CMU Serif",serif;font-size:1.05rem;text-align:center;overflow-x:auto}
+.key-point{background:#dbeafe;border-left:4px solid #2563eb;padding:.6rem 1rem;border-radius:0 6px 6px 0;margin:.75rem 0;font-size:.92rem}
+.exam-tip{background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:.75rem 1rem;margin:.75rem 0;position:relative}
+.exam-tip::before{content:"📌 考点";display:block;font-size:.75rem;font-weight:600;color:#ef4444;margin-bottom:.25rem}
+table{width:100%;border-collapse:collapse;margin:.75rem 0;font-size:.9rem}
+th,td{border:1px solid #e2e8f0;padding:.4rem .6rem;text-align:left}
+th{background:#f1f5f9;font-weight:600}
+@media(max-width:768px){nav.sidebar{position:static;width:100%;height:auto;border-right:none}main{margin-left:0;padding:1rem}}
+</style></head><body>
+<nav class="sidebar"><div class="logo"><h1>📐 金融工程</h1><p>期末复习 · 必备公式与考点</p></div>
+<a href="#ch1">第1章 导论</a>
+<a class="sub" href="#ch1-key">核心概念</a>
+<a href="#ch2">第2章 远期和期货定价</a>
+<a class="sub" href="#ch2-formula">定价公式</a>
+<a class="sub" href="#ch2-valuation">合约估值</a>
+<a href="#ch3">第3章 期货的对冲策略</a>
+<a class="sub" href="#ch3-hedge">套期保值</a>
+<a class="sub" href="#ch3-beta">Beta对冲</a>
+<a href="#ch4">第4章 利率期货</a>
+<a class="sub" href="#ch4-duration">久期</a>
+<a class="sub" href="#ch4-fra">FRA</a>
+<a href="#ch5">第5章 互换</a>
+<a class="sub" href="#ch5-swap">利率互换估值</a>
+<a href="#ch6">第6章 期权价格特性</a>
+<a class="sub" href="#ch6-bound">价格界限</a>
+<a class="sub" href="#ch6-parity">看跌看涨平价</a>
+<a href="#ch7">第7章 二叉树模型</a>
+<a href="#ch8">第8章 股票价格变动模型</a>
+<a href="#ch9">第9章 B-S公式</a>
+<a class="sub" href="#ch9-bs">Black-Scholes</a>
+<a class="sub" href="#ch9-implied">隐含波动率</a>
+<a href="#ch10">第10章 希腊字符与对冲</a>
+<a class="sub" href="#ch10-greeks">希腊字母</a>
+<a href="#exam">📋 真题精选</a>
+</nav><main>
+<section id="ch1"><h2>第1章 导论</h2><p>金融工程学是将金融学、数学、统计学、计算机科学结合的交叉学科，核心目标是通过创新工具设计、资产定价和风险管理来解决复杂金融问题。</p><h3 id="ch1-key">衍生品市场的核心分类</h3><h4>按交易场所</h4><ul><li>交易所交易：标准化合约，中央清算，无违约风险</li><li>场外交易（OTC）：个性化定制，有信用风险</li></ul><h4>按合约性质</h4><ul><li>远期承诺（Forward Commitments）：远期、期货、互换——双方都有义务履行</li><li>或有索取权（Contingent Claims）：期权——买方有权利无义务</li></ul><h3>金融工程的主要分析方法</h3><ul><li>无套利定价法：相同现金流的两项资产价格必须相等</li><li>复制组合：用已知价格的资产组合复制目标资产的现金流</li></ul><div class="key-point"><strong>一价定律</strong>：在竞争市场中等值资产价格应相等。<strong>套利</strong>：违反一价定律时的无风险获利机会。</div><div class="exam-tip">理解远期承诺vs或有索取权的区别。真题常出现合成(synthetic)构造题目。</div></section>
+<section id="ch2"><h2>第2章 远期和期货定价</h2><h3>复利基础</h3><div class="formula">每年m次复利终值：A(1+R/m)<sup>mn</sup><br>连续复利终值：Ae<sup>R<sub>c</sub>n</sup><br>转换：R<sub>c</sub>=m ln(1+R/m)</div><h3 id="ch2-formula">远期定价公式</h3><h4>不支付收益的资产</h4><div class="formula">F = S e<sup>rT</sup></div><p>例：S=$40, r=5%, T=3月 → F=40&times;e<sup>0.05&times;3/12</sup>=$40.50</p><h4>支付已知现金收益</h4><div class="formula">F = (S-I) e<sup>rT</sup></div><h4>支付已知红利率q</h4><div class="formula">F = S e<sup>(r-q)T</sup></div><div class="key-point">核心思路：构造无风险组合（借入S买资产+卖远期），无套利迫使F等于持有成本。</div><h3 id="ch2-valuation">远期合约价值</h3><div class="formula">多头价值 f = (F-K) e<sup>-rT</sup><br>不支付收益：f = S - K e<sup>-rT</sup></div><div class="exam-tip">区分远期价格F(新合约交割价)与合约价值f(已有合约盈亏)。</div></section>
+<section id="ch3"><h2>第3章 期货的对冲策略</h2><h3 id="ch3-hedge">基本对冲策略</h3><h4>空头套期保值</h4><ul><li>持有资产或将在未来出售→卖出期货，锁定卖出价</li></ul><h4>多头套期保值</h4><ul><li>将在未来购买→买入期货，锁定买入价</li></ul><h3>基差风险</h3><div class="formula">基差 b = 现货S - 期货F</div><p>空头对冲有效价：S<sub>2</sub>+(F<sub>1</sub>-F<sub>2</sub>)=F<sub>1</sub>+b<sub>2</sub></p><div class="key-point">空头：基差扩大有利。多头：基差缩小有利。</div><h4>合约选择原则</h4><ol><li>选择相关性最高标的</li><li>选交割月在到期之后的最近月份</li><li>避免交割月持有</li></ol><h3 id="ch3-beta">Beta对冲</h3><div class="formula">N=&beta;&times;S/F<br>调整Beta：N=(&beta;<sub>T</sub>-&beta;*)&times;S/F</div><div class="exam-tip">高频题型：对冲合约数计算、基差分析、Beta对冲。</div></section>
+<section id="ch4"><h2>第4章 利率期货</h2><h3>美国国债报价</h3><div class="formula">现金价=报价+应计利息；报价以1/32为单位</div><h3>长期国债期货</h3><ul><li>标的：面值$100,000，息票率8%标准债券</li><li>空头方选择最便宜可交割债券(CTD)</li></ul><div class="formula">空头方收到现金=期货报价&times;转换因子+应计利息</div><h3>Eurodollar期货</h3><div class="formula">期货价=100-R；1基点=$25/合约</div><h3 id="ch4-fra">远期利率协议(FRA)</h3><ul><li>多头(借款方)：支付固定R<sub>K</sub>，收到LIBOR</li><li>空头(贷款方)：收到固定R<sub>K</sub>，支付LIBOR</li></ul><h3 id="ch4-duration">久期</h3><div class="formula">麦考利久期D=[&Sigma;t&times;PV(CF<sub>t</sub>)]/债券价<br>修正久期=D/(1+y)<br>&Delta;P/P&asymp;-D&times;&Delta;y</div><h4>基于久期的对冲</h4><div class="formula">N = D<sub>B</sub>&times;S / (D<sub>F</sub>&times;F)</div><div class="exam-tip">常见题型：久期计算、债券期货对冲合约数、CTD判断。</div></section>
+<section id="ch5"><h2>第5章 互换</h2><h3>利率互换基本概念</h3><ul><li>交换固定↔浮动利率现金流</li><li>名义本金不交换</li></ul><h3>比较优势理论</h3><ul><li>不同信用等级借款人在不同市场有比较优势</li></ul><h3 id="ch5-swap">互换估值：债券法</h3><div class="formula">互换价值=V<sub>浮动</sub>-V<sub>固定</sub><br>V<sub>固定</sub>=&Sigma;(固定利息&times;e<sup>-r<sub>i</sub>t<sub>i</sub></sup>)+本金&times;e<sup>-r<sub>n</sub>t<sub>n</sub></sup></div><h4>FRA组合法</h4><p>每期浮动现金流看作一份FRA，加总各期价值</p><h3>互换利差</h3><div class="formula">互换利差=互换利率-同期限国债收益率</div><div class="exam-tip">题型：互换估值、互换利率计算。参考习题2025-1第2题。</div></section>
+<section id="ch6"><h2>第6章 股票期权价格的特性</h2><div class="formula">看涨内在价值=max(S-X,0)<br>看跌内在价值=max(X-S,0)</div><h3>影响因素</h3><table><tr><th>变量</th><th>看涨</th><th>看跌</th></tr><tr><td>S标的资产↑</td><td>↑</td><td>↓</td></tr><tr><td>X执行价↑</td><td>↓</td><td>↑</td></tr><tr><td>&sigma;波动率↑</td><td>↑</td><td>↑</td></tr><tr><td>r利率↑</td><td>↑</td><td>↓</td></tr><tr><td>D红利↑</td><td>↓</td><td>↑</td></tr></table><h3 id="ch6-bound">价格上下界</h3><div class="formula">欧式看涨：c&ge;max(S-Xe<sup>-rT</sup>,0)，c&le;S<br>欧式看跌：p&ge;max(Xe<sup>-rT</sup>-S,0)，p&le;Xe<sup>-rT</sup></div><h3 id="ch6-parity">看跌-看涨平价</h3><div class="formula">欧式(无红利)：c+Xe<sup>-rT</sup> = p+S<br>美式：S-X&le;C-P&le;S-Xe<sup>-rT</sup></div><h3>美式提前执行</h3><ul><li>看涨(无红利)：不提前</li><li>看跌(无红利)：可能提前</li><li>看涨(有红利)：除息日前可能提前</li></ul><div class="exam-tip">必考：看跌-看涨平价。参考习题2025-2第6题。</div></section>
+<section id="ch7"><h2>第7章 二叉树模型</h2><h3>单步二叉树</h3><div class="formula">p = (e<sup>r&Delta;t</sup>-d)/(u-d)<br>f = e<sup>-r&Delta;t</sup>[p&middot;f<sub>u</sub>+(1-p)&middot;f<sub>d</sub>]<br>&Delta; = (f<sub>u</sub>-f<sub>d</sub>)/(Su-Sd)</div><h3>两步二叉树</h3><ul><li>非重迭树：2<sup>n</sup>结果</li><li>重迭树：n+1节点</li></ul><h3>美式期权处理</h3><p>每节点比较：持有价值vs立即执行价值，取较大者。</p><div class="exam-tip">必考题：两步二叉树。参考习题2025-1第4题。</div></section>
+<section id="ch8"><h2>第8章 股票价格变动的模型</h2><ul><li>马尔可夫过程：未来只取决于当前值</li><li>维纳过程：dz=&epsilon;&radic;dt，&epsilon;~N(0,1)</li></ul><div class="formula">广义维纳过程：dx=adt+bdz<br>几何布朗运动：dS/S=&mu;dt+&sigma;dz</div><h3>伊藤引理</h3><div class="formula">dG=(&part;G/&part;S&middot;&mu;S+&part;G/&part;t+&frac12;&part;&sup2;G/&part;S&sup2;&middot;&sigma;&sup2;S&sup2;)dt+&part;G/&part;S&middot;&sigma;Sdz</div><p>G=lnS：d(lnS)=(&mu;-&sigma;&sup2;/2)dt+&sigma;dz</p><div class="formula">lnS<sub>T</sub>~N(lnS<sub>0</sub>+(&mu;-&sigma;&sup2;/2)T,&sigma;&sup2;T)</div></section>
+<section id="ch9"><h2>第9章 股票期权定价公式(B-S)</h2><h3>B-S-M微分方程</h3><div class="formula">&part;f/&part;t+rS&middot;&part;f/&part;S+&frac12;&sigma;&sup2;S&sup2;&middot;&part;&sup2;f/&part;S&sup2;=r f</div><div class="key-point">假设：股价连续、波动率常数、无风险利率常数、无交易成本、无红利、无套利、可连续对冲。</div><h3 id="ch9-bs">Black-Scholes公式</h3><div class="formula">c=SN(d<sub>1</sub>)-Xe<sup>-rT</sup>N(d<sub>2</sub>)<br>p=Xe<sup>-rT</sup>N(-d<sub>2</sub>)-SN(-d<sub>1</sub>)</div><div class="formula">d<sub>1</sub>=[ln(S/X)+(r+&sigma;&sup2;/2)T]/(&sigma;&radic;T)<br>d<sub>2</sub>=d<sub>1</sub>-&sigma;&radic;T</div><h4>含红利率q</h4><div class="formula">c=Se<sup>-qT</sup>N(d<sub>1</sub>)-Xe<sup>-rT</sup>N(d<sub>2</sub>)</div><h3 id="ch9-implied">隐含波动率</h3><ul><li>市场价格代入B-S反推出的&sigma;</li><li>波动率微笑：不同执行价隐含波动率不同</li><li>VIX指数：S&P500期权30天隐含波动率</li></ul><div class="exam-tip">必考：B-S公式、已知Delta反推S。参考习题2025-2第1题。</div></section>
+<section id="ch10"><h2>第10章 希腊字符与期权对冲</h2><h3 id="ch10-greeks">五大希腊字母</h3><table><tr><th>字母</th><th>看涨公式</th><th>含义</th></tr><tr><td>&Delta;</td><td>N(d<sub>1</sub>)</td><td>S变$1期权变多少，涨0~1跌-1~0</td></tr><tr><td>&Gamma;</td><td>N'(d<sub>1</sub>)/(S&sigma;&radic;T)</td><td>Delta对S敏感度，>0</td></tr><tr><td>&Theta;</td><td>-SN'(d<sub>1</sub>)&sigma;/(2&radic;T)-rXe<sup>-rT</sup>N(d<sub>2</sub>)</td><td>时间衰减，通常负</td></tr><tr><td>&nu;(Vega)</td><td>SN'(d<sub>1</sub>)&radic;T</td><td>波动率变化敏感度</td></tr><tr><td>&rho;(Rho)</td><td>XTe<sup>-rT</sup>N(d<sub>2</sub>)</td><td>利率敏感度</td></tr></table><h3>Delta对冲</h3><div class="formula">每卖1份看涨，买入&Delta;份股票<br>看跌Delta=N(d<sub>1</sub>)-1</div><div class="key-point">Delta对冲需动态调整。仅Delta无法对冲Gamma风险。</div><h3>Delta-Gamma对冲</h3><ol><li>先选另一期权使Gamma中性</li><li>再调标的资产使Delta中性</li></ol><div class="exam-tip">参考习题2025-2第5、6题(D-G对冲、动态Delta调整)。</div></section>
+<section id="exam"><h2>📋 真题与习题精选</h2><div class="key-point">以下是从习题和真题中提取的核心题型。考前务必动手计算。</div><h3>题型1：远期/期货定价与套利</h3><div class="exam-tip">例：S=$40, r=5%, 3月远期F=40&times;e<sup>0.05&times;3/12</sup>=$40.50。若F=$43则套利获利$2.50。</div><h3>题型2：期货对冲</h3><ul><li>Beta对冲：N=&beta;&times;S/F</li><li>久期对冲：N=D<sub>B</sub>S/(D<sub>F</sub>F)</li></ul><h3>题型3：看跌看涨平价</h3><div class="exam-tip">例：S=16000, X=16000, c=677.146, r=2%, T=3月<br>p = 677.146+16000e<sup>-0.02&times;0.25</sup>-16000</div><h3>题型4：B-S公式</h3><div class="exam-tip">例：c=0.74, &Delta;=0.3426, N(d<sub>2</sub>)=0.31728, X=50, r=4%, T=3月<br>c=SN(d<sub>1</sub>)-Xe<sup>-rT</sup>N(d<sub>2</sub>)→ S=(0.74+50&times;0.99005&times;0.31728)/0.3426</div><h3>考前必记公式</h3><div class="key-point">1.F=Se<sup>rT</sup><br>2.c+Xe<sup>-rT</sup>=p+S<br>3.f=e<sup>-r&Delta;t</sup>[pf<sub>u</sub>+(1-p)f<sub>d</sub>]<br>4.c=SN(d<sub>1</sub>)-Xe<sup>-rT</sup>N(d<sub>2</sub>)<br>5.d<sub>1</sub>=[ln(S/X)+(r+&sigma;&sup2;/2)T]/(&sigma;&radic;T)<br>6.&Delta;=N(d<sub>1</sub>)<br>7.N=&beta;&times;S/F<br>8.N=D<sub>B</sub>S/(D<sub>F</sub>F)</div><div class="key-point"><strong>易错点</strong>：远期价格vs合约价值；连续vs年复利转换；欧式/美式二叉树差异；Delta需动态调整；看跌Delta=N(d<sub>1</sub>)-1</div></section>
+<footer style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid #e2e8f0;text-align:center;color:#64748b;font-size:.85rem"><p>金融工程·期末复习指南 — 祝考试顺利 🎯</p></footer>
+</main>
+<script>document.querySelectorAll("nav.sidebar a").forEach(function(l){l.addEventListener("click",function(){document.querySelectorAll("nav.sidebar a").forEach(function(x){x.classList.remove("active")});this.classList.add("active")})});var s=document.querySelectorAll("section");var n=document.querySelectorAll("nav.sidebar a");window.addEventListener("scroll",function(){var c="";s.forEach(function(x){if(window.scrollY>=x.offsetTop-100)c=x.id});n.forEach(function(a){a.classList.toggle("active",a.getAttribute("href")==="#"+c)})})</script>
+</body></html>
